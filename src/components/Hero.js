@@ -127,11 +127,6 @@ const Hero = () => {
                 minWidth: "300px",
                 transition: "all 0.3s ease-in-out", // Smooth transition for hover effect
               }}
-              whileHover={{
-                scale: 1.05, // Slightly enlarge the card
-                boxShadow: "0 6px 12px rgba(0, 0, 0, 0.2)", // Enhance shadow on hover
-                border: "1px solid #F77D00", // Highlight border color on hover
-              }}
               onClick={() => setSelectedId(item.id)}
             >
               <Typography variant="h6">{item.title}</Typography>
@@ -148,24 +143,29 @@ const Hero = () => {
         <AnimatePresence>
           {selectedId && (
             <motion.div
-              layoutId={selectedId}
-              style={{
-                position: "relative",
-                top: -200,
-                left: 0,
-                width: "50vw",
-                height: "75vh",
-                background: "#fff",
-                border: "1px solid #ddd",
-                borderRadius: "20px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                overflow: "hidden",
-                zIndex: 1000,
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-            >
+            layoutId={selectedId}
+            style={{
+              position: "relative",
+              top: -200,
+              left: 0,
+              height: "75vh",
+              background: "#fff",
+              border: "1px solid #ddd",
+              borderRadius: "20px",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+              overflow: "hidden",
+              zIndex: 1000,
+            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            sx={{
+              width: {
+                xs: "100vw", // Full width on small screens
+                sm: "50vw",  // 50% width on medium+ screens
+              },
+            }}
+          >
               <Typography
                 variant="h4"
                 sx={{ mt: 4, mb: 2, textAlign: "center" }}
