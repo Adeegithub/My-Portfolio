@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import theme from "./theme"; // Import your theme file
 
-function App() {
+
+import "./App.css";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import HireMe from "./components/HireMe";
+import NavBar from "./components/NavBar";
+import TechStack from "./components/TechStack";
+import Footer from "./components/Footer";
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <NavBar />
+      <Hero />
+      <About />
+      <TechStack />
+      <Projects />
+      <HireMe />
+      <Footer />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
