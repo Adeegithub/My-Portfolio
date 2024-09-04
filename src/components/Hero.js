@@ -79,7 +79,7 @@ const Hero = () => {
             mb: 4,
           }}
         >
-          SOFTWARE ENGINEER
+          SOFTWARE ENGINEER!
         </Typography>
 
         <Box
