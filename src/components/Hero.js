@@ -79,7 +79,7 @@ const Hero = () => {
             mb: 4,
           }}
         >
-          SOFTWARE ENGINEER!
+          SOFTWARE ENGINEER
         </Typography>
 
         <Box
@@ -155,6 +155,7 @@ const Hero = () => {
               boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
               overflow: "hidden",
               zIndex: 1000,
+              minWidth: window.innerWidth < 600 ? "100%" : "700px",
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
